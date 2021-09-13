@@ -35,6 +35,11 @@ class CreateSerializedItemsTable extends Migration
             $table->string('dst_segment5')->nullable();
             $table->string('dst_segment6')->nullable();
             $table->string('dst_segment7')->nullable();
+            $table->string('use_current_cost')->nullable();
+            $table->string('transaction_cost_identifier')->nullable();
+            $table->string('cost_component_code')->nullable();
+            $table->string('cost')->nullable();
+            $table->string('serial_num_identifier')->nullable();
             $table->timestamps();
         });
     }
