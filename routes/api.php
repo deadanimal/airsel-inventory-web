@@ -23,6 +23,27 @@ Route::post('/item-creations', [ItemCreationController::class, 'store']);
 Route::get('/item-creations/{item_creation}', [ItemCreationController::class, 'show']); 
 
 
+// INT09
+use App\Http\Controllers\SerializedItemController;
+Route::get('/serialized-items', [SerializedItemController::class, 'index']); 
+Route::post('/serialized-items', [SerializedItemController::class, 'store']);
+Route::get('/serialized-items/{serialized_item}', [SerializedItemController::class, 'show']); 
+
+
+
+
+
+
+
+
+
+// INT02
+use App\Http\Controllers\GrnController;
+Route::get('/grns', [GrnController::class, 'index']); 
+Route::post('/grns', [GrnController::class, 'store']);
+Route::get('/grns/{grn}', [GrnController::class, 'show']); 
+Route::get('/grns-call-erp', [GrnController::class, 'call_erp']); 
+
 // Route::group(function () {    
 //     Route::get('/', function () {
 //         // Uses first & second middleware...
