@@ -7,77 +7,57 @@ use Illuminate\Http\Request;
 
 class AssetRegistrationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $assetRegistrations = AssetRegistration::all();
+        return $assetRegistrations;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $assetRegistration = new AssetRegistration;
+
+        $assetRegistration->asset_owning_department = $request->asset_owning_department;
+        $assetRegistration->asset_hierachy = $request->asset_hierachy;
+        $assetRegistration->asset_categorization = $request->asset_categorization;
+        $assetRegistration->asset_grouping = $request->asset_grouping;
+        $assetRegistration->asset_detail_description = $request->asset_detail_description;
+        $assetRegistration->asset_warranty_information = $request->asset_warranty_information;
+        $assetRegistration->item_creation_id = $request->item_creation_id;
+        $assetRegistration->serialized_item_id = $request->serialized_item_id;
+        $assetRegistration->save();
+        return $assetRegistration;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AssetRegistration  $assetRegistration
-     * @return \Illuminate\Http\Response
-     */
     public function show(AssetRegistration $assetRegistration)
     {
-        //
+        return $assetRegistration;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AssetRegistration  $assetRegistration
-     * @return \Illuminate\Http\Response
-     */
     public function edit(AssetRegistration $assetRegistration)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AssetRegistration  $assetRegistration
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, AssetRegistration $assetRegistration)
     {
-        //
+        $assetRegistration->asset_owning_department = $request->asset_owning_department;
+        $assetRegistration->asset_hierachy = $request->asset_hierachy;
+        $assetRegistration->asset_categorization = $request->asset_categorization;
+        $assetRegistration->asset_grouping = $request->asset_grouping;
+        $assetRegistration->asset_detail_description = $request->asset_detail_description;
+        $assetRegistration->asset_warranty_information = $request->asset_warranty_information;
+        $assetRegistration->item_creation_id = $request->item_creation_id;
+        $assetRegistration->serialized_item_id = $request->serialized_item_id;
+        $assetRegistration->save();
+        return $assetRegistration;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AssetRegistration  $assetRegistration
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(AssetRegistration $assetRegistration)
     {
         //

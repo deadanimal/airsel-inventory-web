@@ -15,6 +15,11 @@ class CreateAssetsTable extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
+            $table->string('wams_assetid')->nullable();
+            $table->string('rfidID')->nullable();
+            $table->string('qr_code')->nullable();
+            $table->foreignId('asset_registration_id')->nullable();
+            $table->foreignId('purchase_order_id')->nullable();
             $table->timestamps();
         });
     }

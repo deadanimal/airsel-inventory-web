@@ -7,77 +7,44 @@ use Illuminate\Http\Request;
 
 class AssetInventoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $assetInventories = new AssetInventory;
+        return $assetInventories;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $assetInventory = new AssetInventory;
+        $assetInventory->asset_id = $request->asset_id;
+        $assetInventory->inventory_id = $request->inventory_id;
+        $assetInventory->save();
+        return $assetInventory;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\AssetInventory  $assetInventory
-     * @return \Illuminate\Http\Response
-     */
     public function show(AssetInventory $assetInventory)
     {
-        //
+        return $assetInventory;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\AssetInventory  $assetInventory
-     * @return \Illuminate\Http\Response
-     */
     public function edit(AssetInventory $assetInventory)
     {
-        //
+        $assetInventory->asset_id = $request->asset_id;
+        $assetInventory->inventory_id = $request->inventory_id;
+        $assetInventory->save();
+        return $assetInventory;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AssetInventory  $assetInventory
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, AssetInventory $assetInventory)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\AssetInventory  $assetInventory
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(AssetInventory $assetInventory)
     {
         //

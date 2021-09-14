@@ -15,6 +15,8 @@ class CreateEmployeeAssetsTable extends Migration
     {
         Schema::create('employee_assets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('employee_id')->nullable();            
+            $table->foreignId('asset_id')->nullable();      
             $table->timestamps();
         });
     }

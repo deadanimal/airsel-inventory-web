@@ -7,77 +7,44 @@ use Illuminate\Http\Request;
 
 class EmployeeAssetController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $employeeAsset = EmployeeAsset::all();
+        return $employeeAsset;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $employeeAsset = new EmployeeAsset;
+        $employeeAsset->employee_id = $request->employee_id;
+        $employeeAsset->asset_id = $request->asset_id;
+        $employeeAsset->save();
+        return $employeeAsset;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\EmployeeAsset  $employeeAsset
-     * @return \Illuminate\Http\Response
-     */
     public function show(EmployeeAsset $employeeAsset)
     {
-        //
+        return $employeeAsset;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\EmployeeAsset  $employeeAsset
-     * @return \Illuminate\Http\Response
-     */
     public function edit(EmployeeAsset $employeeAsset)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\EmployeeAsset  $employeeAsset
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, EmployeeAsset $employeeAsset)
     {
-        //
+        $employeeAsset->employee_id = $request->employee_id;
+        $employeeAsset->asset_id = $request->asset_id;
+        $employeeAsset->save();
+        return $employeeAsset;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\EmployeeAsset  $employeeAsset
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(EmployeeAsset $employeeAsset)
     {
         //

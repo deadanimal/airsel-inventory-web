@@ -15,6 +15,8 @@ class CreateOrganisationInventoriesTable extends Migration
     {
         Schema::create('organisation_inventories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('organization_id')->nullable();            
+            $table->foreignId('inventory_id')->nullable();     
             $table->timestamps();
         });
     }

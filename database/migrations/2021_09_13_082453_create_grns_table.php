@@ -15,6 +15,7 @@ class CreateGrnsTable extends Migration
     {
         Schema::create('grns', function (Blueprint $table) {
             $table->id();
+            $table->string('head_inter_number')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateAssetInventoriesTable extends Migration
     {
         Schema::create('asset_inventories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('asset_id')->nullable();
+            $table->foreignId('inventory_id')->nullable();
             $table->timestamps();
         });
     }

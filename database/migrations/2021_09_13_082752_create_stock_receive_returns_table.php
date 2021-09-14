@@ -15,6 +15,9 @@ class CreateStockReceiveReturnsTable extends Migration
     {
         Schema::create('stock_receive_returns', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('grn_id')->nullable();            
+            $table->foreignId('purchase_order_id')->nullable();  
+            $table->foreignId('employee_id')->nullable();  
             $table->timestamps();
         });
     }

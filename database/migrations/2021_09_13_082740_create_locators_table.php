@@ -15,6 +15,10 @@ class CreateLocatorsTable extends Migration
     {
         Schema::create('locators', function (Blueprint $table) {
             $table->id();
+            $table->string('locator_control')->nullable();
+            $table->string('locator_rack')->nullable();
+            $table->string('locator_row')->nullable();
+            $table->string('validation')->nullable();
             $table->timestamps();
         });
     }

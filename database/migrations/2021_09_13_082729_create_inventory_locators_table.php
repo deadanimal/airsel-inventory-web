@@ -15,6 +15,8 @@ class CreateInventoryLocatorsTable extends Migration
     {
         Schema::create('inventory_locators', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('inventory_id')->nullable();            
+            $table->foreignId('locator_id')->nullable();            
             $table->timestamps();
         });
     }

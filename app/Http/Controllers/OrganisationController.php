@@ -7,77 +7,62 @@ use Illuminate\Http\Request;
 
 class OrganisationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $organization = Organization::all();
+        return $organisation;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $organization = new Organization;
+        $organization->location_name = $request->location_name;
+        $organization->description = $request->description;
+        $organization->inventory_organization = $request->inventory_organization;
+        $organization->address = $request->address;
+        $organization->address_line1 = $request->address_line1;
+        $organization->address_line2 = $request->address_line2;
+        $organization->address_line3 = $request->address_line3;
+        $organization->postal_code = $request->postal_code;
+        $organization->city = $request->city;
+        $organization->state = $request->state;
+        $organization->employee_id = $request->employee_id;
+        $organization->save();
+        return $organisation;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Organisation  $organisation
-     * @return \Illuminate\Http\Response
-     */
     public function show(Organisation $organisation)
     {
-        //
+        return $organisation;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Organisation  $organisation
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Organisation $organisation)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Organisation  $organisation
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Organisation $organisation)
     {
-        //
+        $organization->location_name = $request->location_name;
+        $organization->description = $request->description;
+        $organization->inventory_organization = $request->inventory_organization;
+        $organization->address = $request->address;
+        $organization->address_line1 = $request->address_line1;
+        $organization->address_line2 = $request->address_line2;
+        $organization->address_line3 = $request->address_line3;
+        $organization->postal_code = $request->postal_code;
+        $organization->city = $request->city;
+        $organization->state = $request->state;
+        $organization->employee_id = $request->employee_id;
+        $organization->save();
+        return $organisation;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Organisation  $organisation
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Organisation $organisation)
     {
         //

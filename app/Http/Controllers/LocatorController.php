@@ -7,77 +7,48 @@ use Illuminate\Http\Request;
 
 class LocatorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $locator = Locator::all();
+        return $locator;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $locator = new Locator;
+        $locator->locator_control = $request->locator_control;
+        $locator->locator_rack = $request->locator_rack;
+        $locator->locator_row = $request->locator_row;
+        $locator->validation = $request->validation;
+        $locator->save();
+        return $locator;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Locator  $locator
-     * @return \Illuminate\Http\Response
-     */
     public function show(Locator $locator)
     {
-        //
+        return $locator;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Locator  $locator
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Locator $locator)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Locator  $locator
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Locator $locator)
     {
-        //
+        $locator->locator_control = $request->locator_control;
+        $locator->locator_rack = $request->locator_rack;
+        $locator->locator_row = $request->locator_row;
+        $locator->validation = $request->validation;
+        $locator->save();
+        return $locator;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Locator  $locator
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Locator $locator)
     {
         //

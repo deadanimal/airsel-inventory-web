@@ -15,6 +15,14 @@ class CreateAssetRegistrationsTable extends Migration
     {
         Schema::create('asset_registrations', function (Blueprint $table) {
             $table->id();
+            $table->string('asset_owning_department')->nullable();
+            $table->string('asset_hierachy')->nullable();
+            $table->string('asset_categorization')->nullable();
+            $table->string('asset_grouping')->nullable();
+            $table->string('asset_detail_description')->nullable();
+            $table->string('asset_warranty_information')->nullable();
+            $table->foreignId('item_creation_id')->nullable();
+            $table->foreignId('serialized_item_id')->nullable();
             $table->timestamps();
         });
     }
