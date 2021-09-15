@@ -9,7 +9,7 @@ class ItemCreationController extends Controller
 {
     public function index()
     {
-        $itemCreations = TtemCreation::all();
+        $itemCreations = ItemCreation::all();
         return $itemCreations;
     }
 

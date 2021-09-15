@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateGrnsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations._.baseUrl
      *
      * @return void
      */
